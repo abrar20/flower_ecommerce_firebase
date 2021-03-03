@@ -1,0 +1,93 @@
+.brands{
+    margin: 4rem auto;
+    .brands-banner{
+        h2{
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .4rem;
+        }
+    }
+    .row{
+        justify-content: center;
+        .brand-sqr{
+            margin: 2rem auto;
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+            @media (min-width: 768px){
+                margin: 4rem auto;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 46%;
+                max-width: 46%;
+            }
+            @media (min-width: 992px){
+                margin: 4rem 1rem;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .brand-img{
+                overflow: hidden;
+                position: relative;
+                border: 1px solid #eee;
+                border-bottom: none;
+                img{
+                    width: 100%;
+                }
+            }
+            .brand-content{
+                box-shadow: 0 3px 5px rgba(85, 85, 85 , .20);
+                padding: 20px 10px 23px;
+                h4{
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin: 0 0 5px;
+                    text-transform: capitalize;
+                }
+                .brand-action{
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        border-radius: 50px;
+                        color: white;
+                        font-size: 16px;
+                        height: 30px;
+                        line-height: 30px;
+                        margin-bottom: 5px;
+                        margin-left: 1rem;
+                        text-align: center;
+                        width: 30px;
+                        &:first-of-type{
+                            background-color: #3b5998;
+                            border: 1px solid #3b5998;
+                            margin-left: 0;
+                            &:hover{
+                                background: transparent;
+                                color: #3b5998;
+                            }
+                        }
+                        &:nth-of-type(2){
+                            background-color: #55acee;
+                            border: 1px solid #55acee;
+                            &:hover{
+                                background: transparent;
+                                color: #55acee;
+                            }
+                        }
+                        &:last-of-type{
+                            background-color: #c32aa3;
+                            border: 1px solid #c32aa3;
+                            &:hover{
+                                background: transparent;
+                                color: #c32aa3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

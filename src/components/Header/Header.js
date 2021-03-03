@@ -127,7 +127,7 @@ const Header=(props)=> {
                                             </ul> */}
                                         </li>
                                         <li>
-                                            <Link to="/">Brands</Link>
+                                            <Link to="/brands">Brands</Link>
                                         </li>
                                         <li>
                                             <Link to="/">Contact</Link>
@@ -186,7 +186,7 @@ const Header=(props)=> {
                             <li><a>With Money</a></li>
                         </ul> */}
                     </li>
-                    <li><Link to="/">Our Partners</Link></li>
+                    <li><Link to="/brands">Brands</Link></li>
                     <li><Link to="/">Contact</Link></li>
                 </ul>
             </nav>

@@ -24,6 +24,7 @@ import Login from './Pages/Login/index';
 import HomePage from './Pages/HomePage/HomePage';
 import Registration from './Pages/Registration';
 import Admin from './Pages/Admin/index'
+import Brands from './Pages/Brands/Brands';
 
 function App() {
   const dispatch =useDispatch();
@@ -73,6 +74,11 @@ function App() {
         <Route path="/about" render={() => (
           <MainLayout>
             <About/>
+          </MainLayout>
+        )} />
+        <Route path="/brands" render={() => (
+          <MainLayout>
+            <Brands/>
           </MainLayout>
         )} />
         <Route path="/recovery" render={() => (
