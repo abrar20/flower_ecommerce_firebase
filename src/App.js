@@ -12,6 +12,7 @@ import MainLayout from './layouts/MainLayout';
 import AdminLayout from './layouts/AdminLayout';
 import DashboardLayout from './layouts/DashboardLayout'
 //pages
+import About from './Pages/About/About';
 import Payment from './Pages/Payment/index';
 import Dashboard from './Pages/Dashboard/index';
 import Order from './Pages/Order/index'
@@ -67,6 +68,11 @@ function App() {
         <Route path="/cart" render={() => (
           <MainLayout>
             <Cart />
+          </MainLayout>
+        )} />
+        <Route path="/about" render={() => (
+          <MainLayout>
+            <About/>
           </MainLayout>
         )} />
         <Route path="/recovery" render={() => (

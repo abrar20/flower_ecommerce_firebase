@@ -111,7 +111,7 @@ const Header=(props)=> {
                                             <Link to="/">Home</Link>
                                         </li>
                                         <li>
-                                            <Link to="/">About</Link>
+                                            <Link to="/about">About</Link>
                                         </li>
                                         <li>
                                             <Link to="/products">Products</Link>
@@ -165,7 +165,7 @@ const Header=(props)=> {
             <nav className={`${sideDrawer? 'open': 'close'}`}>
                 <ul className="menu">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/about">About</Link></li>
                     <li /*onClick={toggleArrow}*/>
                         <Link to="/products">Products</Link> 
                             {/* <span>
