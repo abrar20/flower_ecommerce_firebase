@@ -1,0 +1,131 @@
+.footer{
+    
+    background-color: #222;
+    overflow: hidden;
+    padding-top:30px ;
+    margin-top: 70px;
+    color: white;
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        
+    
+    .our-company{
+        .first-list{
+            li{
+                cursor: pointer;
+                &:hover{
+                    color: tomato;
+                }
+            }
+        }
+        .second-list{
+            margin-top: 1.8rem;
+            display: flex;
+            @media (max-width:766px){
+                margin-top: 1rem;
+            }
+            li{
+                cursor: pointer;
+                margin-left: .8rem;
+                &:first-child{
+                    margin-left: 0;
+                }
+                i{
+                    color: whitesmoke;
+                    &:hover{
+                        color: tomato;
+                    }
+                }
+            }
+        }
+    }
+    
+    .section{
+        @media (min-width: 768px){
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @media (max-width: 767px){
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @media (min-width: 992px){
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+        h3{
+            margin: 20px 0;
+            font-weight: 300;
+        }
+        ul{
+            list-style: none;
+            color: #a1a1a1;
+            line-height: 1.8;
+            .empty{
+                margin-left: 25px;
+            }
+        }
+        h4{
+            margin-top: 1.3rem;
+            
+        }
+        p{
+            color: #a1a1a1;
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+        i{
+            margin-right: 8px;
+            color: tomato;
+        }
+    }
+    
+    .gallery{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @media (max-width:766px) {
+            margin-top: 1.7rem;
+        }
+        .img-box{
+            overflow: hidden;
+            margin-bottom: 20px;
+            cursor: pointer;
+            img{
+                width: 80px;
+                height:80px;
+                padding: 3px;
+                background-color: #dfdede;
+                border: 1px solid white;
+                border-radius: 6px;
+                
+            }
+            .text{
+                
+                h4{
+                    color: tomato;
+                    font-weight: 300;
+                    margin-top: 0.1rem;
+                    cursor: pointer;
+                }
+                p{
+                    color: #888;
+                    line-height: 1.9;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    }
+}
+.copyright{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 13px;
+    background :white;
+    span{
+        color: tomato;
+        font-weight: bold;
+    }
+}

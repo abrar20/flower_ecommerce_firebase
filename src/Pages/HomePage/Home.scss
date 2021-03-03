@@ -1,0 +1,212 @@
+$playFair-Font: 'Playfair Display', serif;
+$montesrat: 'Montserrat', sans-serif;
+.home{
+    width: 100%;
+    .banner{
+        background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height:100vh;
+            position: relative;
+            .banner-content{
+                position: absolute;
+                margin-top: 13rem;
+                @media (max-width:511px) {
+                    margin-top: 8rem;
+                }
+                h3{
+                    color: #ff3d2a;
+                    font-size: 36px;
+                    margin: 0;
+                    font-weight: 800;
+                    font-family: 'Rubik', sans-serif;
+                    text-transform: capitalize;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        top: 28px;
+                        margin-left: 12px;
+                        content: "";
+                        height: .1rem;
+                        background: white;
+                        width: 8rem;
+                    }
+                }
+                h1{
+                    color: #171e26;
+                    font-family: "Playfair Display", serif;
+                    font-size: 60px;
+                    font-weight: 400;
+                    margin: 6px 0 10px;
+                }
+                h5{
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 0;
+                    font-family: 'Rubik', sans-serif;
+                    color: #9b8b8b;
+                    font-style: normal;
+                }
+                a{
+                    background-color: #ff3d2a;
+                    border-radius: 5px;
+                    color: #fff;
+                    display: inline-block;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 1;
+                    padding: 18px 38px;
+                    text-decoration: none;
+                    margin-top: 3rem;
+                    text-transform: uppercase;
+                    transition: all 0.3s ease-out 0s;
+                    &:hover{
+                        background-color: white;
+                        color: tomato;
+                    }
+                }
+            }
+    }
+    .banner-area{
+        .banner-wrap{
+            margin-top: -5.5rem;
+            position: relative;
+            z-index: 999;
+            @media (min-width: 768px) and (max-width: 991px){
+                margin-top: -2.5rem;
+            }
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+                .banner-sqr{
+                    position: relative;
+                    width: 100%;
+                    min-height: 1px;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    @media (min-width: 786px){
+                        flex: 0 0 33.333333%;
+                        max-width: 33.333333%;
+                    }
+                    @media (max-width: 785px){
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                    .single-banner{
+                        
+                        position: relative;
+                        a{
+                            display: block;
+                            transition: all 0.3s ease-out 0s;
+                            
+                        }
+                        .banner-sq-content{
+                            left: 0;
+                            position: absolute;
+                            right: 0;
+                            text-align: center;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            h4{
+                                color: #fff;
+                                font-size: 20px;
+                                margin: 0 0 2px;
+                                text-transform: uppercase;
+                                font-style: normal;
+                                font-weight: 400;
+                            }
+                            a{
+                                border-bottom: 1px solid #fff;
+                                color: #ffffff;
+                                display: inline-block;
+                                font-size: 13px;
+                                line-height: 1;
+                                text-transform: uppercase;
+                                &:hover{
+                                    color: tomato;
+                                    border-bottom: 1px solid tomato;
+                                }
+                            }
+                        }
+                    }
+                    .img-zoom{
+                        overflow: hidden;
+                        img{
+                            transition: all 1.5s ease 0s;
+                            width: 100%;
+                            vertical-align: middle;
+                        }
+                    }
+                    &:hover img{
+                        transform: scale(1.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .best-selling{
+        background: #f8f9f9;
+        padding: 5rem 0;
+        margin-top: 4rem;
+        .best-selling-content{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+            @media (max-width:992px) {
+                flex-direction: column;
+            }
+            .selling-img,.selling-content{
+                width: 45%;
+                text-align: center;
+                @media (max-width:992px) {
+                    width: 100%;
+                }
+            }
+            .selling-content{
+                img{
+                    margin-bottom: 1rem;
+                }
+                h2{
+                    font-family: "Rubik" ,sans-serif;
+                    font-size: 36px;
+                    font-weight: 500;
+                    margin: 5px 0 24px;
+                    @media (min-width: 768px) and (max-width: 991px){
+                        font-size: 23px;
+                        margin: 5px 0 14px;
+                    }
+                    span{
+                        color: tomato;
+                    }
+                }
+                p{
+                    
+                    width: 88%;
+                }
+                a{
+                    margin-top: 1.5rem;
+                    background-color: #ff3d2a;
+                    border-radius: 3px;
+                    color: #fff;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 1;
+                    padding: 18px 38px 17px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    &:hover{
+                        background-color: #242424;
+                    }
+                }
+            }
+
+        }
+    }
+}

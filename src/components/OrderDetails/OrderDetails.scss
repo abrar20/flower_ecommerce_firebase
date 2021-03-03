@@ -1,0 +1,23 @@
+.orderDetails{
+    .order-item{
+        display: grid;
+    
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+    align-items: center;
+    img{
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        object-fit: cover;
+      }
+      h4{
+        margin-bottom: 0.5rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+      }
+    }
+}

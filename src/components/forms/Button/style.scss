@@ -1,0 +1,59 @@
+.btn{
+    border-radius: 3px;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 11px 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    @media (max-width:767px){
+        margin-top: 1rem;
+    margin-bottom: 1rem;
+    }
+}
+.first{
+    background-color: #f2f2f2;
+    border:1px solid #f2f2f2;
+    color: #242424;
+    &:hover{
+        border: 1px solid tomato;
+        color: white;
+        background: tomato;
+    }
+}
+.second{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid tomato;
+    color: tomato;
+    margin-left: 2rem;
+    &:hover{
+        border: 1px solid tomato;
+        color: white;
+        background: tomato;
+    }
+}
+.third{
+    display: inline-block;
+    background-color: tomato;
+    border: 1px solid tomato;
+    color: white;
+    &:hover{
+        border: 1px solid tomato;
+        color: tomato;
+        background: white;
+    }
+}
+
+.load{
+    color: tomato;
+    margin: 1rem auto;
+    text-transform: capitalize;
+    &:hover{
+        text-decoration: underline;
+    }
+}

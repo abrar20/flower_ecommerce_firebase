@@ -1,0 +1,24 @@
+.socialSignin{
+    margin-top: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .second{
+        margin-left: 0;
+    }
+}
+.links{
+    display: block;
+    width: 100%;
+    margin: .2rem auto 1rem;
+    text-align: left;
+    a{
+        color: #242424;
+        font-weight: 400;
+        font-size: 15px;
+        transition: all 0.3s ease 0s;
+        &:hover{
+            color: tomato;
+        }
+    }
+}

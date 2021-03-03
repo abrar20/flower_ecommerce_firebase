@@ -1,0 +1,45 @@
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 2rem auto;
+    justify-content: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    img {
+      display: block;
+      width: 40%;
+      border-radius: 10%;
+      margin-right: 2rem;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin: 2rem auto;
+      }
+    }
+    .productDetails{
+
+      justify-content: center;
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      @media (max-width: 768px) {
+        width: 100%;
+        align-items: center;
+      }
+      h1{
+        text-transform: capitalize;
+      }
+      span{
+        margin-bottom: 1rem;
+      }
+      .price-details{
+        font-weight: bold;
+      }
+    }
+  }
+
+ 

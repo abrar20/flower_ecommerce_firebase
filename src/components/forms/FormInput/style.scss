@@ -1,0 +1,14 @@
+.formRow{
+    input,
+    &.checkoutInput select{
+        background-color: transparent;
+        width: 100%;
+    border: 1px solid #ebebeb;
+    color: #666;
+    font-size: .8rem;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 0 .8rem;
+    outline: none;
+    }
+}
