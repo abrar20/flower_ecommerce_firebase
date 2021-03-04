@@ -1,0 +1,16 @@
+.contact{
+    margin: 4rem auto;
+    .formRow{
+        textarea{
+            height: 200px;
+            padding: 10px;
+            background-color: transparent;
+            width: 100%;
+            border: 1px solid #ebebeb;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            outline: none;
+        }
+    }
+}
