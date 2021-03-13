@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Button from './../../forms/Button';
 import { useDispatch } from 'react-redux';
 import { addProduct } from './../../../redux/Cart/cart.actions';
 
@@ -14,7 +13,7 @@ const Product = (product) => {
     productPrice
   } = product;
   if (!documentID || !productThumbnail || !productName ||
-    typeof productPrice === 'undefined') return null;
+    typeof productPrice === 'undefined') return;
 
   const configAddToCartBtn = {
     type: 'button'

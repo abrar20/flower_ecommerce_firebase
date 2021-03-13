@@ -81,7 +81,7 @@ const EmailPassword = props => {
             LogIn
           </Link>
           {` | `}
-          <Link to="/registration">
+          <Link to="/register">
             Register
           </Link>
         </div>

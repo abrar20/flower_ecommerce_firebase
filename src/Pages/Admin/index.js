@@ -19,11 +19,11 @@ const Admin = props => {
   const { products, loading } = useSelector(mapState);
   const dispatch = useDispatch();
   const [hideModal, setHideModal] = useState(true);
-  const [productCategory, setProductCategory] = useState('mens');
+  const [productCategory, setProductCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [productThumbnail, setProductThumbnail] = useState('');
   const [productPrice, setProductPrice] = useState(0);
-  const [productDesc, setProductDesc] = useState('Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum accusamus ducimus suscipit quasi sapiente culpa ipsam magnam dolore quisquam velit. Deleniti ad soluta nam dicta.');
+  const [productDesc, setProductDesc] = useState('');
 
   const { data, queryDoc, isLastPage } = products;
 
@@ -42,11 +42,11 @@ const Admin = props => {
 
   const resetForm = () => {
     setHideModal(true);
-    setProductCategory('mens');
+    setProductCategory('');
     setProductName('');
     setProductThumbnail('');
     setProductPrice(0);
-    // setProductDesc('');
+    setProductDesc('');
   };
 
   const handleSubmit = e => {
@@ -77,10 +77,7 @@ const Admin = props => {
   const configLoadMore = {
     onLoadMoreEvt: handleLoadMore,
   };
-  if (loading) {
-    return <Spinner/>;
-  }
-
+  if(loading) return <Spinner/>;
   return (
     <div className="admin">
 
@@ -104,12 +101,19 @@ const Admin = props => {
 
             <FormSelect
               label="Category"
-              options={[{
+              options={[
+              {value: "show all",
+               name: "Show All"}
+              ,{
                 value: "vase",
                 name: "Vase"
               },{
                 value: "domes",
                 name: "Domes"
+              },
+              {
+                value: "letter-number",
+                name: "Letters & Numbers"
               },
               {
                 value: "bridal",

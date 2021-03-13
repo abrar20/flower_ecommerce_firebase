@@ -19,7 +19,7 @@ export const handleFetchProducts = ({ filterType, startAfterDoc, persistProducts
   return new Promise((resolve, reject) => {
     const pageSize = 16;
 
-    let ref = firestore.collection('products').orderBy('createdDate').limit(16);
+    let ref = firestore.collection('products').orderBy('createdDate','desc').limit(16);
 
     if (filterType) ref = ref.where('productCategory', '==', filterType);
     if (startAfterDoc) ref = ref.startAfter(startAfterDoc);
@@ -44,6 +44,32 @@ export const handleFetchProducts = ({ filterType, startAfterDoc, persistProducts
           queryDoc: snapshot.docs[totalCount - 1],
           isLastPage: totalCount < 1
         });
+      })
+      .catch(err => {
+        reject(err);
+      })
+  })
+}
+
+export const handleFetchSomeProducts = (limitNum) => {
+  return new Promise((resolve, reject) => {
+    const pageSize = limitNum;
+
+    let ref = firestore.collection('products').orderBy('createdDate','desc').limit(pageSize);
+
+    ref
+      .get()
+      .then(snapshot => {
+
+        const productsArray =snapshot.docs.map(doc => {
+            return {
+              ...doc.data(),
+              documentID: doc.id
+            }
+          })
+        ;
+
+        resolve(productsArray);
       })
       .catch(err => {
         reject(err);

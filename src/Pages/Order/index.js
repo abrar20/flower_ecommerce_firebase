@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getOrderDetailsStart } from './../../redux/Orders/orders.actions';
 import { useDispatch, useSelector } from 'react-redux';
 import OrderDetails from './../../components/OrderDetails';
+import './Order.scss';
 
 const mapState = ({ ordersData }) => ({
   orderDetails: ordersData.orderDetails

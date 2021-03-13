@@ -15,6 +15,24 @@ export const setProducts = products => ({
   payload: products
 });
 
+export const fetchSomeProductsStart = (limitNum) => ({
+  type: productsTypes.FETCH_SOME_PRODUCTS_START,
+  payload: limitNum
+});
+export const fetchFooterProductStart = (limitNum) => ({
+  type: productsTypes.FETCH_FOOTER_PRODUCT_START,
+  payload: limitNum
+});
+export const setFooterProduct = footerProduct => ({
+  type: productsTypes.SET_FOOTER_PRODUCT,
+  payload: footerProduct
+});
+
+export const setSomeProducts = someProducts => ({
+  type: productsTypes.SET_SOME_PRODUCTS,
+  payload: someProducts
+});
+
 export const deleteProductStart = productID => ({
   type: productsTypes.DELETE_PRODUCT_START,
   payload: productID

@@ -1,8 +1,8 @@
 import { auth } from './../../firebase/utils';
 import { takeLatest, put, all, call } from 'redux-saga/effects';
-import { setProducts, setProduct, fetchProductsStart } from './products.actions';
+import { setProducts, setProduct, fetchProductsStart, setSomeProducts, setFooterProduct } from './products.actions';
 import { handleAddProduct, handleFetchProducts,
-  handleFetchProduct, handleDeleteProduct } from './products.helpers';
+  handleFetchProduct, handleDeleteProduct, handleFetchSomeProducts } from './products.helpers';
 import productsTypes from './products.types';
 
 export function* addProduct({ payload }) {
@@ -20,7 +20,7 @@ export function* addProduct({ payload }) {
 
 
   } catch (err) {
-    // console.log(err);
+    console.log(err);
   }
 
 }
@@ -37,12 +37,44 @@ export function* fetchProducts({ payload }) {
     );
 
   } catch (err) {
-    // console.log(err);
+    console.log(err);
   }
 }
 
 export function* onFetchProductsStart() {
   yield takeLatest(productsTypes.FETCH_PRODUCTS_START, fetchProducts);
+}
+
+export function* fetchSomeProducts({payload}) {
+  try {
+    const someProducts = yield handleFetchSomeProducts(payload);
+    yield put(
+      setSomeProducts(someProducts)
+    );
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export function* onFetchSomeProductsStart() {
+  yield takeLatest(productsTypes.FETCH_SOME_PRODUCTS_START, fetchSomeProducts);
+}
+
+export function* fetchFooterProduct({payload}) {
+  try {
+    const footerProduct = yield handleFetchSomeProducts(payload);
+    yield put(
+      setFooterProduct(footerProduct)
+    );
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export function* onFetchFooterProductStart() {
+  yield takeLatest(productsTypes.FETCH_FOOTER_PRODUCT_START, fetchFooterProduct);
 }
 
 export function* deleteProduct({ payload }) {
@@ -83,5 +115,7 @@ export default function* productsSagas() {
     call(onFetchProductsStart),
     call(onDeleteProductStart),
     call(onFetchProductStart),
+    call(onFetchSomeProductsStart),
+    call(onFetchFooterProductStart)
   ])
 }

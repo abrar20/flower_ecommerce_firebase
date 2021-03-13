@@ -1,15 +1,46 @@
-import React from 'react'
+import React,{ useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import banner from '../../assets/banner.jpg';
+import Spinner from '../../components/Spinner/Spinner';
 import camella from '../../assets/camella.png';
 import BERGAMOT from '../../assets/ber.png';
 import BOTTLEBRUSH from '../../assets/bottl.png';
 import selling from '../../assets/selling.png';
-import hurry from '../../assets/harry.png'
-
+import hurry from '../../assets/harry.png';
+import Product from '../../components/ProductResults/Product/index';
+import {fetchSomeProductsStart} from '../../redux/Products/products.actions'
 import './Home.scss';
 
+const mapState = ({ productsData }) => ({
+    someProducts: productsData.someProducts,
+    loading: productsData.loading
+  });
 export default function HomePage() {
+    const dispatch = useDispatch();
+    const {someProducts, loading} = useSelector(mapState);
+
+    useEffect(() => {
+        dispatch(
+          fetchSomeProductsStart(7)
+        );
+      }, []);
+    if(loading) return <Spinner/>;
+     let limitProduct = null;
+    if(Array.isArray(someProducts)){ 
+        limitProduct = someProducts.map((product, pos) => {
+        const { productThumbnail, productName, productPrice } = product;
+        if (!productThumbnail || !productName ||
+            typeof productPrice === 'undefined') return;
+
+        const configProduct = {
+            ...product
+        };
+        return (
+            <Product key={pos} {...configProduct} />
+        );
+        });}
+    
     return (
         <div className="home">
             
@@ -65,6 +96,19 @@ export default function HomePage() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="newArriavl">
+                <div className="container">
+                <div className="products">
+
+                <h1>New Arriaval</h1>
+
+                <div className="productResults">
+                    
+                    {limitProduct}
+                </div>
+                </div>
+                </div>
                 </div>
                 <div className="best-selling">
                     <div className="container">

@@ -5,16 +5,18 @@ import { fetchProductStart, setProduct } from '../../redux/Products/products.act
 import { addProduct } from './../../redux/Cart/cart.actions';
 import Button from './../forms/Button';
 import './styles.scss';
+import Spinner from '../Spinner/Spinner';
 
 const mapState = state => ({
-  product: state.productsData.product
+  product: state.productsData.product,
+  loading: state.productsData.loading
 });
 
 const ProductCard = ({}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { productID } = useParams();
-  const { product } = useSelector(mapState);
+  const { product, loading } = useSelector(mapState);
 
   const {
     productThumbnail,
@@ -47,7 +49,7 @@ const ProductCard = ({}) => {
   const configAddToCartBtn = {
     type: 'button'
   }
-
+  if(loading) return <Spinner/>;
   return (
     <div className="container">
       <div className="hero">

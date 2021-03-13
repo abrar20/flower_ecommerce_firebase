@@ -45,6 +45,10 @@ const ProductResults = ({ }) => {
       name: "Domes"
     },
     {
+      value: "letter-number",
+      name: "Letters & Numbers"
+    },
+    {
       value: "bridal",
       name: "Bridal"
     },
@@ -93,9 +97,7 @@ const ProductResults = ({ }) => {
   const configLoadMore = {
     onLoadMoreEvt: handleLoadMore,
   };
-  if (loading){
-    return <Spinner/>;
-  }
+  if (loading) return <Spinner/>;
   
   return (
     <div className="products">

@@ -3,7 +3,7 @@ import en from '../../assets/en.jpg';
 import ar from '../../assets/ar.jpg';
 import logo from '../../assets/logo.png';
 import { useSelector, useDispatch } from 'react-redux';
-import {Link,useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { signOutUserStart } from '../../redux/User/user.actions';
 import { selectCartItemsCount } from '../../redux/Cart/cart.selectors';
 import { checkUserIsAdmin} from '../../Utils/index';
@@ -24,9 +24,6 @@ const Header=(props)=> {
     const signOut = () => {
       dispatch(signOutUserStart());
     };
-    const toggleSubMenue=()=>{
-        setSubMenu(!subMenu);
-    }
     const toggleArrow=()=>{
         setUpArrow(!upArrow);
     }
@@ -34,8 +31,7 @@ const Header=(props)=> {
         setSideDrawer(!sideDrawer);
     }
     const isAdmin = checkUserIsAdmin(currentUser);
-    let p = null;
-    if(!isAdmin) p= 'Default welcome msg!';
+    let p = 'Join Our Clients';
     if(isAdmin) p = <Link to='/admin'>My Admin</Link>
     return (
         <header>
@@ -115,16 +111,6 @@ const Header=(props)=> {
                                         </li>
                                         <li>
                                             <Link to="/products">Products</Link>
-                                            {/* <ul className="mega-menu">
-                                                <li><a href="#">Box</a></li>
-                                                <li><a href="#">Bouquet</a></li>
-                                                <li><a href="#">Stand</a></li>
-                                                <li><a href="#">Valentine</a></li>
-                                                <li><a href="#">Bridal</a></li>
-                                                <li><a href="#">Mother Day</a></li>
-                                                <li><a href="#">With Chocolete</a></li>
-                                                <li><a href="#">With Money</a></li>
-                                            </ul> */}
                                         </li>
                                         <li>
                                             <Link to="/brands">Brands</Link>
@@ -136,8 +122,9 @@ const Header=(props)=> {
                                 </nav>
                             </div>
                             <div className="cart-icon">
-                                <Link to="/cart"><i className="fa fa-shopping-bag" ></i></Link>
-                                <span>{totalNumCartItems}</span>
+                                <Link to="/cart"><i className="fa fa-shopping-bag" >
+                                <span>{totalNumCartItems}</span></i></Link>
+                                
                             </div>
                         
                         
@@ -145,8 +132,8 @@ const Header=(props)=> {
                         <div className="mobile-menu">
                             <ul className="mobile-icons">
                                 <li><Link to="/cart">
-                                    <i className="fas fa-shopping-bag"></i>
-                                    <span>{totalNumCartItems}</span>
+                                    <i className="fas fa-shopping-bag"><span>{totalNumCartItems}</span></i>
+                                    
                                 </Link></li>
                                 <li><a href="#">
                                     <i className="fas fa-bars" onClick={showSideDrawer}></i>
@@ -166,25 +153,8 @@ const Header=(props)=> {
                 <ul className="menu">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li /*onClick={toggleArrow}*/>
+                    <li>
                         <Link to="/products">Products</Link> 
-                            {/* <span>
-                        Products
-                        <span>
-                        <i className={`${upArrow ? 'fas fa-chevron-up' : 'fas fa-chevron-down'} `} onClick={toggleSubMenue}></i>
-                        
-                        </span>
-                            </span>*/}
-                        {/* <ul className={`sub-menu ${subMenu ? 'openSubMenu' : 'closeSubMenu'}`}>
-                            <li><a>Box</a></li>
-                            <li><a>Bouquet</a></li>
-                            <li><a>Stand</a></li>
-                            <li><a>Valentibe</a></li>
-                            <li><a>MotherDay</a></li>
-                            <li><a>Bridal</a></li>
-                            <li><a>With Chocolete</a></li>
-                            <li><a>With Money</a></li>
-                        </ul> */}
                     </li>
                     <li><Link to="/brands">Brands</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
