@@ -11,8 +11,8 @@ $montesrat: 'Montserrat', sans-serif;
             .banner-content{
                 position: absolute;
                 margin-top: 13rem;
-                @media (max-width:511px) {
-                    margin-top: 8rem;
+                @media (min-width:577px) and (max-width:785px) {
+                    margin-top: 2rem;
                 }
                 h3{
                     color: #ff3d2a;
@@ -30,6 +30,10 @@ $montesrat: 'Montserrat', sans-serif;
                         height: .1rem;
                         background: white;
                         width: 8rem;
+                        @media (max-width: 428px) {
+                            top: 60px;
+                            left: 0;
+                        }
                     }
                 }
                 h1{
@@ -38,6 +42,10 @@ $montesrat: 'Montserrat', sans-serif;
                     font-size: 60px;
                     font-weight: 400;
                     margin: 6px 0 10px;
+                    @media (max-width:785px) {
+                        font-size: 50px;
+                        margin: 0;
+                    }
                 }
                 h5{
                     font-size: 18px;

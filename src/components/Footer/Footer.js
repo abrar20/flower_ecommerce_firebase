@@ -81,7 +81,7 @@ export default function Footer() {
             </div>
 
             </div>
-        <div className="copyright"> All Right Reserved. &copy; 2020 Made By <span>ABRAR</span></div>
+        <div className="copyright"> All Right Reserved. &copy; 2021 Made By <span>ABRAR</span></div>
         </footer>
     );
 }
